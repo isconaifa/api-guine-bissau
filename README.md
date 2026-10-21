@@ -24,7 +24,14 @@ Repositório: <https://github.com/isconaifa/api-guine-bissau>
 Todas as rotas são `GET`, públicas e sem autenticação, e começam com `/v1`. O contrato completo
 está em [`docs/openapi.yaml`](docs/openapi.yaml) (OpenAPI 3.1).
 
-📖 **Documentação interativa (Swagger UI):** <https://isconaifa.github.io/api-guine-bissau/docs/>
+📖 **Documentação interativa (Swagger UI):**
+
+- online: <https://isconaifa.github.io/api-guine-bissau/docs/> (consulta);
+- no servidor local: <http://localhost:8080/v1/docs/> depois de `go run ./cmd/api`, com
+  "Try it out" a funcionar sem configuração.
+
+O "Try it out" da versão online também chama `http://localhost:8080`, por isso o servidor local
+tem de estar a correr.
 
 | Rota | Descrição |
 |------|-----------|
@@ -36,6 +43,7 @@ está em [`docs/openapi.yaml`](docs/openapi.yaml) (OpenAPI 3.1).
 | `/v1/pesquisa?q=texto` | Pesquisa regiões, setores e secções pelo nome |
 | `/v1/sobre` | Autor, licença, versão e fontes dos dados |
 | `/v1/saude` | Verificação de saúde (para plataformas de hospedagem) |
+| `/v1/docs/` | Documentação Swagger UI (contrato em `/v1/docs/openapi.yaml`) |
 
 ### Formato das respostas
 
@@ -64,7 +72,8 @@ curl https://<servidor>/v1/regioes
 {"dados":[{"slug":"bafata","nome":"Bafatá","tipo":"regiao","capital":"Bafatá","capital_fonte_id":"wikipedia-pt-subdivisoes","fonte_id":"ine-gb-em-numeros-2017","verificado":false}, ...],"total":9,"fonte":"INE Guiné-Bissau; Wikipédia (pt)"}
 ```
 
-`tipo` é `regiao` ou `setor-autonomo` (Sector Autónomo de Bissau).
+`tipo` é `regiao` ou `setor-autonomo`. Slugs das regiões: `bafata`, `biombo`, `bolama-bijagos`,
+`cacheu`, `gabu`, `oio`, `quinara`, `tombali` e `sector-autonomo-de-bissau` (não `bissau`).
 
 ```bash
 curl https://<servidor>/v1/regioes/bafata

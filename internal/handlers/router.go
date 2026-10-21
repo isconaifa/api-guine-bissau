@@ -40,6 +40,8 @@ func NovoRouter(base *dados.Base) *gin.Engine {
 	v1.GET("/regioes/:regiao/setores/:setor/seccoes", a.listarSeccoes)
 	v1.GET("/pesquisa", a.pesquisar)
 	v1.GET("/sobre", a.sobre)
+	v1.GET("/docs/", paginaDocs)
+	v1.GET("/docs/openapi.yaml", contratoOpenAPI)
 
 	return r
 }
