@@ -163,4 +163,7 @@ Se o valor pedido não tiver formato de slug (ex.: `Bafatá`), a mensagem acresc
 
 ## Itens em aberto (não bloqueiam o plano)
 
-- Documento oficial exato (título, ano, URL) da fonte INE.
+- Fonte oficial das capitais regionais (o INE, *Guiné-Bissau em Números 2017*, Tabela 1, só lista
+  regiões e setores). Oio: Farim mantido por decisão do autor (2026-10-21), pendente de
+  confirmação (outra fonte indica Bissorã).
+- Fonte oficial das secções (ex.: Recenseamento Geral da População e Habitação do INE).

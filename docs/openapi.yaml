@@ -1,0 +1,308 @@
+openapi: 3.1.0
+info:
+  title: API Guiné-Bissau
+  version: v1
+  description: >
+    Divisão administrativa da Guiné-Bissau (regiões e Setor Autónomo de Bissau → setores →
+    secções). Leitura pública, sem autenticação. Todas as respostas usam o mesmo envelope.
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080
+    description: Servidor local (go run ./cmd/api)
+paths:
+  /v1/regioes:
+    get:
+      summary: Lista as regiões e o Setor Autónomo de Bissau
+      responses:
+        "200":
+          description: Lista de regiões
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeLista"
+                  - properties:
+                      dados:
+                        type: array
+                        items: { $ref: "#/components/schemas/RegiaoResumo" }
+  /v1/regioes/{regiao}:
+    get:
+      summary: Detalhes de uma região (com a lista dos seus setores)
+      parameters: [{ $ref: "#/components/parameters/regiao" }]
+      responses:
+        "200":
+          description: Região
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeObjeto"
+                  - properties:
+                      dados: { $ref: "#/components/schemas/RegiaoDetalhe" }
+        "404": { $ref: "#/components/responses/RegiaoNaoEncontrada" }
+  /v1/regioes/{regiao}/setores:
+    get:
+      summary: Lista os setores de uma região
+      parameters: [{ $ref: "#/components/parameters/regiao" }]
+      responses:
+        "200":
+          description: Setores da região
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeLista"
+                  - properties:
+                      dados:
+                        type: array
+                        items: { $ref: "#/components/schemas/SetorResumo" }
+        "404": { $ref: "#/components/responses/RegiaoNaoEncontrada" }
+  /v1/regioes/{regiao}/setores/{setor}:
+    get:
+      summary: Detalhes de um setor (inclui a região a que pertence)
+      parameters:
+        - { $ref: "#/components/parameters/regiao" }
+        - { $ref: "#/components/parameters/setor" }
+      responses:
+        "200":
+          description: Setor
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeObjeto"
+                  - properties:
+                      dados: { $ref: "#/components/schemas/SetorDetalhe" }
+        "404":
+          description: REGIAO_NAO_ENCONTRADA ou SETOR_NAO_ENCONTRADO
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Erro" }
+  /v1/regioes/{regiao}/setores/{setor}/seccoes:
+    get:
+      summary: Lista as secções de um setor (lista vazia se não houver)
+      parameters:
+        - { $ref: "#/components/parameters/regiao" }
+        - { $ref: "#/components/parameters/setor" }
+      responses:
+        "200":
+          description: Secções do setor
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeLista"
+                  - properties:
+                      dados:
+                        type: array
+                        items: { $ref: "#/components/schemas/Seccao" }
+        "404":
+          description: REGIAO_NAO_ENCONTRADA ou SETOR_NAO_ENCONTRADO
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Erro" }
+  /v1/pesquisa:
+    get:
+      summary: Pesquisa localidades pelo nome (ignora acentos e maiúsculas)
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string, minLength: 1, maxLength: 100 }
+          example: gabu
+      responses:
+        "200":
+          description: Resultados (lista vazia se não houver correspondência)
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/EnvelopeLista"
+                  - properties:
+                      dados:
+                        type: array
+                        items: { $ref: "#/components/schemas/ResultadoPesquisa" }
+        "400":
+          description: PARAMETRO_INVALIDO
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Erro" }
+  /v1/sobre:
+    get:
+      summary: Informações sobre o projeto
+      responses:
+        "200":
+          description: Autor, licença, versão e fontes
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [dados]
+                properties:
+                  dados: { $ref: "#/components/schemas/Sobre" }
+  /v1/saude:
+    get:
+      summary: Verificação de saúde
+      responses:
+        "200":
+          description: Serviço ativo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dados:
+                    type: object
+                    properties:
+                      estado: { type: string, const: ok }
+components:
+  parameters:
+    regiao:
+      name: regiao
+      in: path
+      required: true
+      schema: { type: string, pattern: "^[a-z0-9]+(-[a-z0-9]+)*$" }
+      example: bafata
+    setor:
+      name: setor
+      in: path
+      required: true
+      schema: { type: string, pattern: "^[a-z0-9]+(-[a-z0-9]+)*$" }
+  responses:
+    RegiaoNaoEncontrada:
+      description: REGIAO_NAO_ENCONTRADA
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Erro" }
+          example:
+            erro:
+              codigo: REGIAO_NAO_ENCONTRADA
+              mensagem: Região 'xyz' não encontrada.
+  schemas:
+    EnvelopeLista:
+      type: object
+      required: [dados, total, fonte]
+      properties:
+        dados: { type: array }
+        total: { type: integer, minimum: 0 }
+        fonte:
+          type: string
+          description: Nomes das fontes dos dados devolvidos, separados por "; ".
+    EnvelopeObjeto:
+      type: object
+      required: [dados, fonte]
+      properties:
+        dados: { type: object }
+        fonte: { type: string }
+    Erro:
+      type: object
+      required: [erro]
+      properties:
+        erro:
+          type: object
+          required: [codigo, mensagem]
+          properties:
+            codigo:
+              type: string
+              enum:
+                - REGIAO_NAO_ENCONTRADA
+                - SETOR_NAO_ENCONTRADO
+                - PARAMETRO_INVALIDO
+                - ROTA_NAO_ENCONTRADA
+                - ERRO_INTERNO
+            mensagem: { type: string, description: Mensagem em português }
+    Verificacao:
+      type: object
+      required: [fonte_id, verificado]
+      properties:
+        fonte_id: { type: string, description: Id da fonte (detalhes em /v1/sobre) }
+        verificado:
+          type: boolean
+          description: false = pendente de verificação com a fonte oficial
+    Referencia:
+      type: object
+      required: [slug, nome]
+      properties:
+        slug: { type: string }
+        nome: { type: string }
+    RegiaoResumo:
+      allOf:
+        - $ref: "#/components/schemas/Verificacao"
+        - type: object
+          required: [slug, nome, tipo, capital]
+          properties:
+            slug: { type: string, example: bafata }
+            nome: { type: string, example: Bafatá }
+            tipo: { type: string, enum: [regiao, setor-autonomo] }
+            capital: { type: string }
+            capital_fonte_id:
+              type: string
+              description: Id da fonte da capital, quando diferente de fonte_id
+    RegiaoDetalhe:
+      allOf:
+        - $ref: "#/components/schemas/RegiaoResumo"
+        - type: object
+          required: [setores]
+          properties:
+            setores:
+              type: array
+              items: { $ref: "#/components/schemas/Referencia" }
+    SetorResumo:
+      allOf:
+        - $ref: "#/components/schemas/Verificacao"
+        - $ref: "#/components/schemas/Referencia"
+    SetorDetalhe:
+      allOf:
+        - $ref: "#/components/schemas/SetorResumo"
+        - type: object
+          required: [regiao, total_seccoes]
+          properties:
+            regiao: { $ref: "#/components/schemas/Referencia" }
+            total_seccoes: { type: integer, minimum: 0 }
+    Seccao:
+      allOf:
+        - $ref: "#/components/schemas/Verificacao"
+        - $ref: "#/components/schemas/Referencia"
+    ResultadoPesquisa:
+      allOf:
+        - $ref: "#/components/schemas/Verificacao"
+        - type: object
+          required: [tipo, slug, nome, caminho]
+          properties:
+            tipo: { type: string, enum: [regiao, setor-autonomo, setor, seccao] }
+            slug: { type: string }
+            nome: { type: string }
+            regiao:
+              $ref: "#/components/schemas/Referencia"
+              description: Presente em setores e secções
+            setor:
+              $ref: "#/components/schemas/Referencia"
+              description: Presente em secções
+            caminho:
+              type: string
+              description: >
+                Rota para obter a entidade (para secções, a lista de secções do setor).
+              example: /v1/regioes/gabu
+    Fonte:
+      type: object
+      required: [id, nome, referencia, consultado_em]
+      properties:
+        id: { type: string }
+        nome: { type: string }
+        referencia: { type: string }
+        url: { type: string, format: uri }
+        consultado_em: { type: string, format: date }
+    Sobre:
+      type: object
+      required: [nome, autor, licenca, versao, versao_api, repositorio, fontes]
+      properties:
+        nome: { type: string, example: API Guiné-Bissau }
+        autor: { type: string, example: Francisco Naifa }
+        licenca: { type: string, const: MIT }
+        versao: { type: string, example: v1.0.0 }
+        versao_api: { type: string, const: v1 }
+        repositorio: { type: string, format: uri }
+        fontes:
+          type: array
+          items: { $ref: "#/components/schemas/Fonte" }

@@ -4,6 +4,8 @@ publico/
 /gerador
 *.exe
 coverage.out
+*.test
+*.out
 
 # Configuração local do IDE (GoLand) e do Claude Code
 .idea/workspace.xml

@@ -1,0 +1,56 @@
+{
+  "fontes": [
+    {
+      "id": "fonte-teste",
+      "nome": "Fonte de Teste",
+      "referencia": "Documento fictício usado apenas nos testes",
+      "url": "https://exemplo.org/teste",
+      "consultado_em": "2026-10-21"
+    },
+    {
+      "id": "fonte-secundaria",
+      "nome": "Fonte Secundária & Teste",
+      "referencia": "Segundo documento fictício",
+      "consultado_em": "2026-10-20"
+    }
+  ],
+  "regioes": [
+    {
+      "slug": "regiao-a",
+      "nome": "Região A",
+      "tipo": "regiao",
+      "capital": "Cidade A",
+      "capital_fonte_id": "fonte-secundaria",
+      "fonte_id": "fonte-teste",
+      "verificado": true,
+      "setores": [
+        {
+          "slug": "regiao-a",
+          "nome": "Região A",
+          "fonte_id": "fonte-teste",
+          "verificado": true,
+          "seccoes": [
+            { "slug": "seccao-um", "nome": "Secção Um", "fonte_id": "fonte-teste", "verificado": false },
+            { "slug": "seccao-dois", "nome": "Secção Dois", "fonte_id": "fonte-teste", "verificado": false }
+          ]
+        },
+        {
+          "slug": "setor-b",
+          "nome": "Setor B",
+          "fonte_id": "fonte-secundaria",
+          "verificado": false,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "setor-autonomo-teste",
+      "nome": "Setor Autónomo Teste",
+      "tipo": "setor-autonomo",
+      "capital": "Cidade Autónoma",
+      "fonte_id": "fonte-teste",
+      "verificado": false,
+      "setores": []
+    }
+  ]
+}

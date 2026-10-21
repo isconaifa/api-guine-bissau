@@ -1,0 +1,11 @@
+.git
+.github
+.idea
+.claude
+.specify
+specs
+publico
+Dockerfile
+.dockerignore
+*.test
+*.out

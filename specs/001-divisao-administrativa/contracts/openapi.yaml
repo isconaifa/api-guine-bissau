@@ -235,6 +235,9 @@ components:
             nome: { type: string, example: Bafatá }
             tipo: { type: string, enum: [regiao, setor-autonomo] }
             capital: { type: string }
+            capital_fonte_id:
+              type: string
+              description: Id da fonte da capital, quando diferente de fonte_id
     RegiaoDetalhe:
       allOf:
         - $ref: "#/components/schemas/RegiaoResumo"

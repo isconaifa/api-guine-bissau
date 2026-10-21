@@ -1,0 +1,51 @@
+# Slugs publicados (Princípios IV e VII). Uma linha por entidade: <tipo>:<caminho de slugs>.
+# Remover ou renomear uma linha só é permitido numa nova versão da API. Antes da primeira
+# publicação (v1.0.0), os slugs ainda podem ser ajustados à grafia oficial (research R7a).
+# Os slugs de setores ficam únicos em todo o país: o caminho regiao/setor é só informativo.
+regiao:bafata
+setor:bafata/bafata
+setor:bafata/bambadinca
+setor:bafata/contuboel
+setor:bafata/cosse
+setor:bafata/gamamudo
+setor:bafata/xitole
+regiao:biombo
+setor:biombo/prabis
+setor:biombo/quinhamel
+setor:biombo/safim
+regiao:bolama-bijagos
+setor:bolama-bijagos/bolama
+setor:bolama-bijagos/bubaque
+setor:bolama-bijagos/caravela
+setor:bolama-bijagos/uno
+regiao:cacheu
+setor:cacheu/bigene
+setor:cacheu/bula
+setor:cacheu/cacheu
+setor:cacheu/caio
+setor:cacheu/canchungo
+setor:cacheu/s-domingos
+regiao:gabu
+setor:gabu/boe
+setor:gabu/gabu
+setor:gabu/pirada
+setor:gabu/pitche
+setor:gabu/sonaco
+regiao:oio
+setor:oio/bissora
+setor:oio/farim
+setor:oio/mansaba
+setor:oio/mansoa
+setor:oio/nhacra
+regiao:quinara
+setor:quinara/buba
+setor:quinara/empada
+setor:quinara/fulacunda
+setor:quinara/tite
+regiao:tombali
+setor:tombali/bedanda
+setor:tombali/cacine
+setor:tombali/catio
+setor:tombali/komo
+setor:tombali/quebo
+regiao:sector-autonomo-de-bissau

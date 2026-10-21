@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Formatação (gofmt)
+        run: test -z "$(gofmt -l .)"
+      - name: Análise estática (go vet)
+        run: go vet ./...
+      - name: Testes
+        run: go test ./...

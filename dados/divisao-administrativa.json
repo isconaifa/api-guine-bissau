@@ -1,0 +1,384 @@
+{
+  "fontes": [
+    {
+      "id": "ine-gb-em-numeros-2017",
+      "nome": "INE Guiné-Bissau",
+      "referencia": "Instituto Nacional de Estatística da Guiné-Bissau, Boletim Estatístico «Guiné-Bissau em Números 2017», Tabela 1 – Divisão administrativa (p. 9); fonte indicada na tabela: Direcção Geral de Cadastro do Ministério das Obras Públicas e Urbanismo. Nomes publicados em maiúsculas no original.",
+      "url": "https://www.stat-guinebissau.com/Menu_principal/Pubica%C3%A7%C3%B5es/anuario/boletim_estatistico_GB/guinebissau-em-numero2017.pdf",
+      "consultado_em": "2026-10-21"
+    },
+    {
+      "id": "wikipedia-pt-subdivisoes",
+      "nome": "Wikipédia (pt)",
+      "referencia": "Artigo «Subdivisões da Guiné-Bissau», revisão 72530219 — fonte secundária, usada apenas para as capitais regionais até confirmação oficial.",
+      "url": "https://pt.wikipedia.org/w/index.php?title=Subdivis%C3%B5es_da_Guin%C3%A9-Bissau&oldid=72530219",
+      "consultado_em": "2026-10-21"
+    }
+  ],
+  "regioes": [
+    {
+      "slug": "bafata",
+      "nome": "Bafatá",
+      "tipo": "regiao",
+      "capital": "Bafatá",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "bafata",
+          "nome": "Bafatá",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "bambadinca",
+          "nome": "Bambadinca",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "contuboel",
+          "nome": "Contuboel",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "cosse",
+          "nome": "Cossé",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "gamamudo",
+          "nome": "Gãmamudo",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "xitole",
+          "nome": "Xitole",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "biombo",
+      "nome": "Biombo",
+      "tipo": "regiao",
+      "capital": "Quinhamel",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "prabis",
+          "nome": "Prabis",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "quinhamel",
+          "nome": "Quinhamel",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "safim",
+          "nome": "Safim",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "bolama-bijagos",
+      "nome": "Bolama Bijagós",
+      "tipo": "regiao",
+      "capital": "Bolama",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "bolama",
+          "nome": "Bolama",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "bubaque",
+          "nome": "Bubaque",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "caravela",
+          "nome": "Caravela",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "uno",
+          "nome": "Uno",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "cacheu",
+      "nome": "Cacheu",
+      "tipo": "regiao",
+      "capital": "Cacheu",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "bigene",
+          "nome": "Bigéne",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "bula",
+          "nome": "Bula",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "cacheu",
+          "nome": "Cacheu",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "caio",
+          "nome": "Caió",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "canchungo",
+          "nome": "Canchungo",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "s-domingos",
+          "nome": "S. Domingos",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "gabu",
+      "nome": "Gabú",
+      "tipo": "regiao",
+      "capital": "Gabu",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "boe",
+          "nome": "Boé",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "gabu",
+          "nome": "Gabú",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "pirada",
+          "nome": "Pirada",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "pitche",
+          "nome": "Pitche",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "sonaco",
+          "nome": "Sonaco",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "oio",
+      "nome": "Oio",
+      "tipo": "regiao",
+      "capital": "Farim",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "bissora",
+          "nome": "Bissorã",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "farim",
+          "nome": "Farim",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "mansaba",
+          "nome": "Mansaba",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "mansoa",
+          "nome": "Mansoa",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "nhacra",
+          "nome": "Nhacra",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "quinara",
+      "nome": "Quinara",
+      "tipo": "regiao",
+      "capital": "Buba",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "buba",
+          "nome": "Buba",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "empada",
+          "nome": "Empada",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "fulacunda",
+          "nome": "Fulacunda",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "tite",
+          "nome": "Tite",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "tombali",
+      "nome": "Tombali",
+      "tipo": "regiao",
+      "capital": "Catió",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": [
+        {
+          "slug": "bedanda",
+          "nome": "Bedanda",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "cacine",
+          "nome": "Cacine",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "catio",
+          "nome": "Catió",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "komo",
+          "nome": "Komo",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        },
+        {
+          "slug": "quebo",
+          "nome": "Quebo",
+          "fonte_id": "ine-gb-em-numeros-2017",
+          "verificado": true,
+          "seccoes": []
+        }
+      ]
+    },
+    {
+      "slug": "sector-autonomo-de-bissau",
+      "nome": "Sector Autónomo de Bissau",
+      "tipo": "setor-autonomo",
+      "capital": "Bissau",
+      "capital_fonte_id": "wikipedia-pt-subdivisoes",
+      "fonte_id": "ine-gb-em-numeros-2017",
+      "verificado": false,
+      "setores": []
+    }
+  ]
+}

@@ -66,6 +66,7 @@ Os valores entre `<>` são ilustrativos; nenhum dado real é definido neste plan
 | `nome` | string | sim | nome oficial com acentos; não vazio |
 | `tipo` | enum | sim | `regiao` ou `setor-autonomo` |
 | `capital` | string | sim | não vazio |
+| `capital_fonte_id` | string | não | `Fonte.id` existente; fonte da capital quando diferente de `fonte_id` |
 | `fonte_id` | string | sim | referencia um `Fonte.id` existente |
 | `verificado` | bool | sim | `false` = pendente de verificação |
 | `setores` | lista | sim | pode ser vazia |
