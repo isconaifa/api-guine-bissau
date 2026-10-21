@@ -5,8 +5,18 @@ info:
   description: >
     Divisão administrativa da Guiné-Bissau (regiões e Setor Autónomo de Bissau → setores →
     secções). Leitura pública, sem autenticação. Todas as respostas usam o mesmo envelope.
+
+
+    Versão estática (sem servidor): os mesmos dados em
+    https://isconaifa.github.io/api-guine-bissau/v1/regioes.json (acrescente `.json` a cada
+    rota; ver o README). Para usar "Try it out", corra o servidor localmente
+    (`go run ./cmd/api`).
+  contact:
+    name: Francisco Naifa
+    url: https://github.com/isconaifa/api-guine-bissau
   license:
     name: MIT
+    url: https://github.com/isconaifa/api-guine-bissau/blob/main/LICENSE
 servers:
   - url: http://localhost:8080
     description: Servidor local (go run ./cmd/api)

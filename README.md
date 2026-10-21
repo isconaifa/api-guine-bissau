@@ -24,6 +24,8 @@ Repositório: <https://github.com/isconaifa/api-guine-bissau>
 Todas as rotas são `GET`, públicas e sem autenticação, e começam com `/v1`. O contrato completo
 está em [`docs/openapi.yaml`](docs/openapi.yaml) (OpenAPI 3.1).
 
+📖 **Documentação interativa (Swagger UI):** <https://isconaifa.github.io/api-guine-bissau/docs/>
+
 | Rota | Descrição |
 |------|-----------|
 | `/v1/regioes` | Lista as 8 regiões e o Sector Autónomo de Bissau |

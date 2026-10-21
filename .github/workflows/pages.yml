@@ -29,6 +29,10 @@ jobs:
         run: go test ./...
       - name: Gerar JSON estático
         run: go run ./cmd/gerador -saida publico
+      - name: Documentação (Swagger UI)
+        run: |
+          cp -r docs publico/docs
+          printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=docs/"><a href="docs/">Documentação da API Guiné-Bissau</a>\n' > publico/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: publico
