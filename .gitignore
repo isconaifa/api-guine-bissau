@@ -1,0 +1,11 @@
+# Saída do gerador estático e binários
+publico/
+/api
+/gerador
+*.exe
+coverage.out
+
+# Configuração local do IDE (GoLand) e do Claude Code
+.idea/workspace.xml
+.mcp.json
+.claude/settings.local.json
